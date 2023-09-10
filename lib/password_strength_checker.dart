@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class PasswordStrengthChecker extends StatefulWidget {
   const PasswordStrengthChecker({
     super.key,
-    required this.value,
+    required this.password,
     required this.onStrengthChanged,
   });
 
-  /// Password value: obtained from a text field, passed to this widget
-  final String value;
+  /// Password value: obtained from a text field
+  final String password;
 
   /// Callback that will be called when password strength changes
   final Function(bool isStrong) onStrengthChanged;
@@ -27,10 +27,10 @@ class _PasswordStrengthCheckerState extends State<PasswordStrengthChecker> {
     super.didUpdateWidget(oldWidget);
 
     /// Check if the password value has changed
-    if (widget.value != oldWidget.value) {
+    if (widget.password != oldWidget.password) {
       /// If changed, re-validate the password strength
       final isStrong = _validators.entries.every(
-        (entry) => entry.key.hasMatch(widget.value),
+        (entry) => entry.key.hasMatch(widget.password),
       );
 
       /// Call callback with new value to notify parent widget
@@ -59,14 +59,14 @@ class _PasswordStrengthCheckerState extends State<PasswordStrengthChecker> {
   Widget build(BuildContext context) {
     /// If the password is empty yet, we'll show validation messages in plain
     /// color, not green or red
-    final hasValue = widget.value.isNotEmpty;
+    final hasValue = widget.password.isNotEmpty;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: _validators.entries.map(
         (entry) {
           /// Check if the password matches the current validator requirement
-          final hasMatch = entry.key.hasMatch(widget.value);
+          final hasMatch = entry.key.hasMatch(widget.password);
 
           /// Based on the match, we'll show the validation message in green or
           /// red color
