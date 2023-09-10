@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                       _isStrong = value;
                     });
                   },
-                  value: password,
+                  password: password,
                 );
               },
             ),

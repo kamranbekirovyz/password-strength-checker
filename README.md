@@ -1,4 +1,6 @@
 # password_strength_checker
 
-Full codebase for the password strength checker tutorial on my blog.
-Medium link: https://medium.com/@jameshamann/password-strength-checker-in-python-6e1dbfc4c1c1
+<img src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*n2NU5OhL49k-lnRjR03rtQ.png" alt="Password Strength Checker" width="100%">
+
+Full codebase for the password strength checker article.  
+Medium article: <a href="https://medium.com/@kamranbekirovyz/ac219650305a">Building a customizable password strength checker in Flutter</a>
